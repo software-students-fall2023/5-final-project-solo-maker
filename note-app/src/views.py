@@ -10,7 +10,7 @@ main = Blueprint('main', __name__)
 @main.route("/")
 def home():
     # get the notes from the database
-    notes = get_notes();
+    notes = get_notes()
 
     # render a view
     return render_template("/pages/home.html", homeIsActive=True, addNoteIsActive=False, notes=notes)
