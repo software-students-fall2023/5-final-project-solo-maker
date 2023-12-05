@@ -6,15 +6,25 @@ services:
     ports: 
       - "27017:27017"
     
-  webapp:
-    build: note-app
-    image: web_app
-    container_name: my_web_app
+  note-app:
+    build: ./note-app
+    image: note_app
+    container_name: my_note_app
     volumes:
       - ./note-app:/usr/src/app
     ports:
-      - "6001:5000"
+      - "5000:5000"
     depends_on:
       - db
     stdin_open: true 
     tty: true
+
+  scapy-backend:
+    build: ./scapy-backend
+    image: scapy_backend
+    container_name: my_scapy_backend
+    volumes:
+      - ./scapy-backend:/usr/src/app
+    ports:
+      - "5050:5050"
+

@@ -8,7 +8,7 @@ class Config(object):
 class DevelopmentConfig(Config):
     """开发环境配置"""
     DEBUG = True
-    MONGO_URI = 'mongodb://localhost:27017/Isomorphism'
+    MONGO_URI = 'mongodb://db:27017/Isomorphism'
 
 
 class TestingConfig(Config):
