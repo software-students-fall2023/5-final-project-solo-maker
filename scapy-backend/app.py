@@ -4,7 +4,7 @@ from flask_cors import CORS
 from scrapy import Spider
 
 app = Flask(__name__, static_url_path='')
-CORS(app)  # 应用跨域到所有路由
+CORS(app)
 
 @app.route('/api/v1/datasource/', methods=['GET', 'POST'])
 def datasource():
