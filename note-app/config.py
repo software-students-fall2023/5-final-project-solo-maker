@@ -18,4 +18,4 @@ class TestingConfig(Config):
 
 class ProductionConfig(Config):
     """生产环境配置"""
-    MONGO_URI = 'your_production_mongo_uri'
+    MONGO_URI = 'mongodb://db:27017/Development'
