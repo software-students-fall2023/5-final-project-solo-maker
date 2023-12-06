@@ -21,7 +21,7 @@ jobs:
         pipenv sync --dev --python $(which python)
         pipenv shell --fancy --python $(which python)
 
-    - name: Test with pytest (web-app)
+    - name: Test with pytest (note-app)
       run: |
         cd note-app
         pipenv run coverage run -m pytest
