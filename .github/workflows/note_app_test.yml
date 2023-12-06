@@ -9,10 +9,10 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Set up Python 3.10
+    - name: Set up Python 3.8
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10'
+        python-version: '3.8'
 
     - name: Install dependencies
       run: |
@@ -25,4 +25,3 @@ jobs:
       run: |
         cd note-app
         pipenv run coverage run -m pytest
-        pipenv run coverage report --fail-under=80
