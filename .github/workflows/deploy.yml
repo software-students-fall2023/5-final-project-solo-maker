@@ -1,0 +1,51 @@
+name: Docker Build and Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out the repo
+      uses: actions/checkout@v2
+
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_HUB_USERNAME }}
+        password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+
+    - name: Build and push Docker image 1
+      uses: docker/build-push-action@v2
+      with:
+        context: ./note-app
+        file: ./note-app/Dockerfile
+        push: true
+        tags: asukatan/note-app:latest
+
+    - name: Build and push Docker image 2
+      uses: docker/build-push-action@v2
+      with:
+        context: ./scapy-backend
+        file: ./scapy-backend/Dockerfile
+        push: true
+        tags: asukatan/scapy-backend:latest
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH and Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # Deployment commands
+            cd 5-final-project-solo-maker
+            docker-compose pull
+            docker-compose down
+            docker-compose up -d
