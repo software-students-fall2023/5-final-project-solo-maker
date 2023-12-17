@@ -45,7 +45,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             # Deployment commands
-            cd 5-final-project-solo-maker
+            cd /5-final-project-solo-maker
             docker-compose pull
             docker-compose down
             docker-compose up -d
