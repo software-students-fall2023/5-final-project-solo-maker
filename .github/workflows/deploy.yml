@@ -46,6 +46,8 @@ jobs:
           script: |
             # Deployment commands
             cd /5-final-project-solo-maker
-            docker-compose pull
             docker-compose down
-            docker-compose up -d
+            docker-compose pull
+            git pull origin main 
+            docker-compose up --build -d 
+            docker image prune -a -f
