@@ -6,7 +6,7 @@ An exercise to put to practice software development teamwork, subsystem communic
 
 We can take add/revise/delete notes with note title and Description in the Note app. Also, there is a web crawler integrated in the website called scapy to collect and visualized data for video website Bilibili(Chinese biggest video website, description below) 
 
-note: The whole system is build on flask + jquery. Because I don't want to get annoyed by jquery environment. So I package my jquery build dictionary in the file.
+note: The whole system is build on flask + jquery. Because I don't want to get annoyed by jquery environment. So I package my jquery build dictionary in the file. So
 
 ## Badges
 
@@ -88,4 +88,6 @@ Bilibili (often referred to as 哔哩哔哩 or B Site) is one of Chi	na's most p
 ### Website
 
 [Bilibili Official Website](https://www.bilibili.com).
+
+
 
