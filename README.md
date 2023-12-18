@@ -1,7 +1,3 @@
-# Final Project
-
-An exercise to put to practice software development teamwork, subsystem communication, containers, deployment, and CI/CD pipelines. See [instructions](./instructions.md) for details.
-
 # Note app + web crawler
 
 We can take add/revise/delete notes with note title and Description in the Note app. Also, there is a web crawler integrated in the website called scapy to collect and visualized data for video website Bilibili(Chinese biggest video website, description below) 
