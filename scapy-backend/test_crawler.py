@@ -1,5 +1,5 @@
 import pytest
-from app import app as flask_app  # Import your Flask app
+from app import app as flask_app
 
 
 @pytest.fixture
@@ -13,10 +13,8 @@ def client(app):
 
 
 def test_datasource_post(client):
-    # Test POST request with UID
     response = client.post('/api/v1/datasource/', data={'uid': '12345'})
     assert response.status_code == 200
-    # Further assertions based on expected behavior
 
 
 def test_datasource_post_no_uid(client):
