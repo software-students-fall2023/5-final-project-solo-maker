@@ -13,7 +13,7 @@ class DevelopmentConfig(Config):
 class TestingConfig(Config):
     """测试环境配置"""
     TESTING = True
-    MONGO_URI = 'mongodb://db:27017/Test'
+    MONGO_URI = 'mongodb://localhost:27017/Test'
 
 
 class ProductionConfig(Config):
