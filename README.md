@@ -89,29 +89,25 @@ Bilibili (often referred to as 哔哩哔哩 or B Site) is one of Chi	na's most p
 
 [Bilibili Official Website](https://www.bilibili.com).
 
+# First Coverage Report
+| Name                | Stmts | Miss | Cover |
+|---------------------|-------|------|-------|
+| config.py           | 12    | 0    | 100%  |
+| src/__init__.py     | 10    | 0    | 100%  |
+| src/models.py       | 14    | 0    | 100%  |
+| src/views.py        | 47    | 0    | 100%  |
+| tests/__init__.py   | 0     | 0    | 100%  |
+| tests/test_model.py | 36    | 0    | 100%  |
+| tests/test_view.py  | 53    | 0    | 100%  |
+| TOTAL               | 172   | 0    | 100%  |
+# Second Coverage Report
+| Name           | Stmts | Miss | Cover |
+|----------------|-------|------|-------|
+| __init__.py    | 0     | 0    | 100%  |
+| app.py         | 19    | 1    | 95%   |
+| scrapy.py      | 13    | 0    | 100%  |
+| test_crawler.py| 19    | 0    | 100%  |
+| TOTAL          | 51    | 1    | 98%   |
 
-======================== 12 passed, 2 warnings in 1.42s ========================
-Name                  Stmts   Miss  Cover
------------------------------------------
-config.py                12      0   100%
-src/__init__.py          10      0   100%
-src/models.py            14      0   100%
-src/views.py             47      0   100%
-tests/__init__.py         0      0   100%
-tests/test_model.py      36      0   100%
-tests/test_view.py       53      0   100%
------------------------------------------
-TOTAL                   172      0   100%
-
-
- ============================== 3 passed in 0.87s ===============================
-Name              Stmts   Miss  Cover
--------------------------------------
-__init__.py           0      0   100%
-app.py               19      1    95%
-scrapy.py            13      0   100%
-test_crawler.py      19      0   100%
--------------------------------------
-TOTAL                51      1    98%
 
 
