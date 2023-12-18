@@ -12,7 +12,7 @@ note: The whole system is build on flask + jquery. Because I don't want to get a
 
 [![Docker Build and Deploy](https://github.com/software-students-fall2023/5-final-project-solo-maker/actions/workflows/deploy.yml/badge.svg)](https://github.com/software-students-fall2023/5-final-project-solo-maker/actions/workflows/deploy.yml)
 
-[![note-App-test](https://github.com/software-students-fall2023/5-final-project-solo-maker/actions/workflows/note_app_test.yml/badge.svg)](https://github.com/software-students-fall2023/5-final-project-solo-maker/actions/workflows/note_app_test.yml)
+[![note-App-test](https://github.com/software-students-fall2023/5-final-project-solo-maker/actions/workflows/note_app_test.yml/badge.svg?branch=test-branch)](https://github.com/software-students-fall2023/5-final-project-solo-maker/actions/workflows/note_app_test.yml)
 
 [![scapy-backend-test](https://github.com/software-students-fall2023/5-final-project-solo-maker/actions/workflows/scapy_backend_test.yml/badge.svg)](https://github.com/software-students-fall2023/5-final-project-solo-maker/actions/workflows/scapy_backend_test.yml)
 
