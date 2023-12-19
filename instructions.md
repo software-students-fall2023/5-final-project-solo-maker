@@ -1,3 +1,5 @@
+[![CI/CD Badge](URL_TO_CI/CD_BADGE)](https://github.com/software-students-fall2023/5-final-project-solo-maker/actions/runs/7169595585) <!-- Replace with actual CI/CD badge for Flask Backend -->
+[![CI/CD Badge](URL_TO_CI/CD_BADGE)](https://github.com/software-students-fall2023/5-final-project-solo-maker/actions/runs/7169595592) <!-- Replace with actual CI/CD badge for Scapy Backend -->
 # Final Project
 
 An exercise to put to practice software development teamwork, database integration, containers, deployment, and CI/CD pipelines.

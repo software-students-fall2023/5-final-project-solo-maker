@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+pytest = "*"
+pytest-flask = "*"
+pylint = "*"
+black = "*"
+pymongo = "*"
+flask-pymongo = "*"
+mongomock = "*"
+flask-cors = "*"
+scapy = "*"
+scrapy = "*"
+coverage = "*"
+pytest-mock = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"

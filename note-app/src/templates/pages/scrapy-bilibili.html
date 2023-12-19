@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video stats for Bilibili Video</title>
+    <script src="{{url_for('static', filename='jquery.js')}}"></script>
+    <script src="{{url_for('static', filename='build/dist/echarts.js')}}"></script>
+</head>
+<body>
+    <h1>Video stats for Bilibili Video</h1>
+    <div id="total"></div>
+    <script type="text/javascript">
+        var uid = {{uid}};
+        $.ajax({
+            type: 'POST',
+            url: "http://167.71.92.148:5050/api/v1/datasource",
+            data: {
+                uid: uid
+            },
+            success: function(response){
+                console.log(response);
+                var personalData = response.data;
+                generateCharts(personalData);
+            },
+            error: function(){
+                console.log("failure")
+            }
+        });
+
+        function generateCharts(personalData) {
+            require.config({
+                paths: {
+                    echarts: "{{url_for('static', filename='build/dist')}}"
+                }
+            });
+
+            require(['echarts', 'echarts/chart/bar'], function (ec) {
+                for(var i = 0; i < personalData.count; i++) {
+                    var divId = "main" + i;
+                    var div = "<div id=" + divId + " style='height:400px'></div>";
+                    $("#total").append(div);
+                    var myChart = ec.init(document.getElementById(divId));
+                    var arrTitle = personalData.list[i].video_list.map((x) => x.title);
+                    var arrCount = personalData.list[i].video_list.map((x) => parseInt(x.view, 10));
+                    var option = {
+                        tooltip: { show: true },
+                        legend: { data: [personalData.list[i].name] },
+                        xAxis: [{ type: 'category', data: arrTitle }],
+                        yAxis: [{ type: 'value' }],
+                        series: [{
+                            "name": "View",
+                            "type": "bar",
+                            "data": arrCount
+                        }]
+                    };
+                    myChart.setOption(option);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

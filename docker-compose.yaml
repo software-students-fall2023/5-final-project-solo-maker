@@ -1,0 +1,28 @@
+version: '3'
+services:
+  db:
+    image: mongo:4.4
+    container_name: my_mongo_db
+    ports: 
+      - "27017:27017"
+    
+  note-app:
+    image: asukatan/note-app
+    container_name: my_note_app
+    volumes:
+      - ./note-app:/usr/src/app
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    stdin_open: true 
+    tty: true
+
+  scapy-backend:
+    image: asukatan/scapy-backend
+    container_name: my_scapy_backend
+    volumes:
+      - ./scapy-backend:/usr/src/app
+    ports:
+      - "5050:5050"
+
