@@ -40,8 +40,38 @@ http://167.71.92.148:5000/
 git clone https://github.com/software-students-fall2023/5-final-project-solo-maker
 ```
 
-then build project
+Change url 5-final-project-solo-maker/note-app/src/templates/pages/scrapy-bilibili.html
+from  url: "http://167.71.92.148:5050/api/v1/datasource" to url: "http://localhost:5050/api/v1/datasource"
+and change docker-compose file to build locally instead of pulling latest from docker
 
+```
+version: '3'
+services:
+  db:
+    image: mongo
+    image: mongo:4.4
+    container_name: my_mongo_db
+    ports: 
+      - "27017:27017"
+
+  note-app:
+    build: ./note-app
+    image: note_app
+    image: asukatan/note-app
+    container_name: my_note_app
+    volumes:
+      - ./note-app:/usr/src/app
+    tty: true
+
+  scapy-backend:
+    build: ./scapy-backend
+    image: scapy_backend
+    image: asukatan/scapy-backend
+    container_name: my_scapy_backend
+    volumes:
+      - ./scapy-backend:/usr/src/app
+```
+then
 ```
 docker docker-compose up -d
 ```
